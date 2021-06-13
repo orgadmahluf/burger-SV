@@ -1,0 +1,22 @@
+
+
+.btn{
+    align-content: space-between;
+    margin: 1%;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large
+}
+
+
+  .container-input {
+    padding-right: 60px;
+    padding-left: 60px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+ 
