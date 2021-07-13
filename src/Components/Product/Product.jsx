@@ -6,9 +6,12 @@ export default function Product(props) {
   const [bg,setBg] = useState('white')
   
   const choose =()=>{
+
     if(bg === 'white') {
-      props.add(props.index)
-      setBg('lightBlue')
+      if(props.permision == true){
+        props.add(props.index)
+        setBg('lightBlue')
+      }
     }
     else {
       props.delete(props.index)

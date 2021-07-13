@@ -1,4 +1,5 @@
 import React,{useRef} from 'react'
+import {Link} from 'react-router-dom'
 import { useAuth } from "../../AuthContext"
 import { useHistory } from "react-router-dom"
 import './SignIn.css'
@@ -32,9 +33,11 @@ export default function SignIn() {
             <div className='card-body text-center'>
                <input className='form-control' ref={emailRef} type="text" placeholder='Enter your email'/><br />
                <input className='form-control' ref={passwordRef} type="password" placeholder='Enter your password'/><br />
+               <Link id='forgotId' to="/Forgot-Password">Forgot Password?</Link><br />
                <button type='submit' style={{fontWeight:'bold'}} className='btn btn-primary'>Sign in</button>
             </div>
         </form>
+       
     </div>
     )
 }

@@ -1,7 +1,16 @@
 
+.eranClass{
+  color:white;
+  font-weight: bolder;
+  font-size: 40px;
+  text-shadow:2px 2px black
+  
+}
 
-
-
+#bolderHeader{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
 
   .container-btn {
     padding-right: 60px;

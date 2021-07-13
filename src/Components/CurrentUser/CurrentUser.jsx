@@ -11,13 +11,14 @@ export default function CurrentUser() {
     const [show,setShow]=useState(true)
     const [showPayment,setShowPayment] = useState(false)
     const [shoopingCart,setShoopingCart] = useState([])
+    const [permision,setPermision] = useState(true)
 
     const products = [
-    {title:'ארוחה רגילה', info:' ארוחת המבורגר + שתייה',price:'59',src:'https://st.depositphotos.com/1004059/2748/v/950/depositphotos_27488437-stock-illustration-fast-food.jpg'},
-    {title:'ארוחת ילדים', info:'ארוחת ילדים שניצל + שתייה',price:'39',src:'https://st2.depositphotos.com/5739646/11649/v/950/depositphotos_116498516-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'},
-    {title:'המבורגר', info:'המבורגר 220',price:'45',src:'https://image.freepik.com/free-vector/hamburger-cheeseburger-cartoon-icon_202271-1154.jpg'},
-    {title:'ארוחה טבעונית', info:'המבורגר טבעוני',price:'45',src:'https://st2.depositphotos.com/5739646/11444/v/950/depositphotos_114446346-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'},
-    {title:'תוספת', info:'ציפס',price:'12',src:'https://st2.depositphotos.com/5739646/11444/v/950/depositphotos_114446306-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'}]
+    {title:'Combo Meal',count:'1', info:'Burger + Drink',price:'59',src:'https://st.depositphotos.com/1004059/2748/v/950/depositphotos_27488437-stock-illustration-fast-food.jpg'},
+    {title:'Kids Meal',count:'1', info:'Chicken + Drink',price:'39',src:'https://st2.depositphotos.com/5739646/11649/v/950/depositphotos_116498516-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'},
+    {title:'Burger',count:'1', info:'Burger 220',price:'45',src:'https://image.freepik.com/free-vector/hamburger-cheeseburger-cartoon-icon_202271-1154.jpg'},
+    {title:'Vegan',count:'1', info:'Beyond Vegan Burger',price:'45',src:'https://st2.depositphotos.com/5739646/11444/v/950/depositphotos_114446346-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'},
+    {title:'Sides',count:'1', info:'Fries',price:'12',src:'https://st2.depositphotos.com/5739646/11444/v/950/depositphotos_114446306-stock-illustration-kids-restaurant-menu-cardboard-character.jpg'}]
 
 
     async function handleLogout() {
@@ -30,34 +31,43 @@ export default function CurrentUser() {
     }
 
     const addProduct = (index)=>{
-      shoopingCart.push(products[index])
-      if(shoopingCart.length == 1){
-        setShow(false)
+
+      if(shoopingCart.length < 3){
+        shoopingCart.push(products[index])
+        if(shoopingCart.length == 1){
+          setShow(false)
+        }
+        setShoopingCart([...shoopingCart])
+        setPermision(true)
       }
-      setShoopingCart([...shoopingCart])
+      else{
+        setPermision(false)
+      }
+      
     }
     
     const deleteProduct = (index)=>{
-      debugger
+
       let newShoopingCart = shoopingCart.filter((item)=>item.title!==products[index].title)
       if(newShoopingCart.length == 0){
         setShow(true)
       }
       setShoopingCart([...newShoopingCart])
+      setPermision(true)
     }
 
     return (
         <div className='text-center'>
-            current user works!!!
+
             
           <strong>Email:</strong> {currentUser.email}
           <div className='productsMain'>
           {products.map((item,index)=>{
-            return <Product key={index} add={addProduct} delete={deleteProduct} title={item.title} info={item.info} price={item.price} src={item.src} index={index}/>
+            return <Product permision={permision} key={index} add={addProduct} delete={deleteProduct} title={item.title} info={item.info} price={item.price} src={item.src} index={index}/>
           })}
           </div>
           <button className='btn btn-primary' variant="link" onClick={handleLogout}> Log out </button>
-          <button className='btn btn-primary' disabled={show} onClick={()=>{setShowPayment(true)}}> Buy </button>
+          <button className='btn btn-primary' disabled={show} onClick={()=>{setShowPayment(true)}}> Reserve </button>
           {showPayment == true?<Payment closePopup={setShowPayment} items={shoopingCart} />:null}
         </div>
     )

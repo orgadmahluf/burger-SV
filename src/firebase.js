@@ -3,6 +3,7 @@ import "firebase/auth"
 import "firebase/database";
 
 
+
 const app = firebase.initializeApp({
   apiKey: "AIzaSyB3NN9nBcABO0fkgHvuZ3r3XU2sK5IjIP4",
   authDomain: "auth-development-1dced.firebaseapp.com",
@@ -12,6 +13,9 @@ const app = firebase.initializeApp({
   messagingSenderId: "652127023114",
   appId: "1:652127023114:web:63723d827748615d286ff3"
 })
+
+
+
 
 
 export function writeUserData(firstName,lastName,password, email) {
@@ -27,3 +31,5 @@ export function writeUserData(firstName,lastName,password, email) {
 
 export const auth = app.auth()
 export default app
+
+

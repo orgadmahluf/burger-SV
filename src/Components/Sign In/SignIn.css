@@ -1,4 +1,10 @@
 
+#forgotId{
+  font-size: 20px;
+  font-weight: bolder;
+  text-shadow: 2px 2px black;
+  color: white;
+}
 
 .btn{
     align-content: space-between;
@@ -13,6 +19,7 @@
 
 
   .container-input {
+    width: 500px;
     padding-right: 60px;
     padding-left: 60px;
     margin-right: auto;

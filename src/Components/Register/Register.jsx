@@ -13,16 +13,19 @@ export default function Register() {
     const passwordConfirmRef = useRef()
 
     function validDetails(){
-        if(firstNameRef.current.value.length ===1 || firstNameRef.current.value.length>20)
-            throw 'first name error'
-        else if(lastNameRef.current.value.length===1 || lastNameRef.current.value.length>20)
-            throw 'last name error'
+        if(firstNameRef.current.value.length ===1 || firstNameRef.current.value.length>10)
+            throw 'First name must be between 2 and 10 characters'
+        else if(!(/^[a-zA-Z]+$/.test(firstNameRef.current.value)))
+            throw 'First name must be in English letters only'
+        else if(lastNameRef.current.value.length===1 || lastNameRef.current.value.length>10)
+            throw 'Last name must be between 2 and 10 characters'
+        else if(!(/^[a-zA-Z]+$/.test(lastNameRef.current.value)))
+            throw 'Last name must be in English letters only'
         else if(emailRef.current.value.indexOf('@')<0)
             throw 'miising @'
-        else if(emailRef.current.value.indexOf('gmail') < 0 && emailRef.current.value.indexOf('yahoo') < 0 )
-            throw 'gmail of yhaoo only'
-        else if(passwordRef.current.value.length < 2 || passwordRef.current.value.length>20)
-            throw 'password error'
+        // else if(emailRef.current.value.indexOf('gmail') < 0 && emailRef.current.value.indexOf('yahoo') < 0 )
+        //     throw 'gmail or yhaoo only'
+        // TODO: Capital Letter
         else if(passwordRef.current.value !== passwordConfirmRef.current.value)
             throw 'password and confirm error'
     }
