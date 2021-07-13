@@ -41,7 +41,7 @@ export default function Payment(props) {
             sum *= 0.8;
         }
 
-        return sum
+        return Number(sum.toFixed(1))
     }
 
     const show=()=>{

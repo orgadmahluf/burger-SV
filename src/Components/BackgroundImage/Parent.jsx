@@ -8,11 +8,11 @@ const Parent = (props) => {
     return (
     <Fragment>
         <div style={{
-            backgroundImage: `url(${URL})`,
-            backgroundSize:'1300px 982px',
-            backgroundPosition:'center',
-            backgroundRepeat:'no-repeat',
-             backgroundColor:'lightblue'
+            // backgroundImage: `url(${URL})`,
+            // backgroundSize:'1300px 982px',
+            // backgroundPosition:'center',
+            // backgroundRepeat:'no-repeat',
+            //  backgroundColor:'lightblue'
             
         }}>
             {props.children}
