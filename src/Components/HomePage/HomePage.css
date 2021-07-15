@@ -22,8 +22,7 @@
 
   .card{
     justify-content: space-between;
-     background-Size: 1300px 400px;
+     background-Size: auto;
      background-Position: center ;
-     background-repeat: no-repeat;
   }
 

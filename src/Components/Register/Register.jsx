@@ -3,7 +3,7 @@ import './Register.css'
 import { useAuth } from "../../AuthContext"
 import {writeUserData} from '../../firebase'
 import { useHistory } from "react-router-dom"
-import HamburgerImg3 from '../BackgroundImages/HamburgerImg3.jpg'
+import HamburgerImg3 from '../BackgroundImages/HamburgerImg12.jpg'
 export default function Register() {
     const { signup,currentUser } = useAuth()
     const history = useHistory()

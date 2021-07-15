@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import Product from "../Product/Product"
 import Payment from '../Payment/Payment'
 import './CurrentUser.css'
-import HamburgerImg4 from '../BackgroundImages/HamburgerImg4.jpg'
+import HamburgerImg4 from '../BackgroundImages/HamburgerImg12.jpg'
 
 
 export default function CurrentUser() {

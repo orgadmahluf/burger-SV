@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { useAuth } from "../../AuthContext"
 import { Link } from "react-router-dom"
 import './ForgotPassword.css'
-import HamburgerImg5 from '../BackgroundImages/HamburgerImg5.jpg'
+import HamburgerImg5 from '../BackgroundImages/HamburgerImg12.jpg'
 
 
 export default function ForgotPassword() {
