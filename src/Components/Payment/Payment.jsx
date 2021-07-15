@@ -108,7 +108,7 @@ export default function Payment(props) {
 
                     <h2> Total: {sum()}$ </h2>
                     <h3>Table No {tableNumber}</h3>
-                    <h4>Your order will arrive at the table in ...</h4>
+                    <h4>Your order will arrive to your table in ...</h4>
                     <h2>  <Countdown date={Date.now() + 600000} /></h2>
                     <div className='col-12'>
                         <button className='btn btn-primary' onClick={()=>{setFlag(true)}}>Cancel</button>

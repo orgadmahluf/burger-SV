@@ -2,6 +2,8 @@ import React, { useRef } from "react"
 import { useAuth } from "../../AuthContext"
 import { Link } from "react-router-dom"
 import './ForgotPassword.css'
+import HamburgerImg5 from '../BackgroundImages/HamburgerImg5.jpg'
+
 
 export default function ForgotPassword() {
   const emailRef = useRef()
@@ -23,7 +25,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <div>
+      <div className = 'card4' style={{backgroundImage: `url(${HamburgerImg5})`}}>
         <div>
 
           <form onSubmit={handleSubmit}>

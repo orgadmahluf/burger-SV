@@ -3,3 +3,10 @@
     justify-self:center;
     flex-direction: column;
 }
+
+
+.card3{
+    background-Size: 1000px 870px;
+    background-Position: center ;
+    background-repeat: no-repeat;
+  }

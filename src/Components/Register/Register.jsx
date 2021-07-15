@@ -3,6 +3,7 @@ import './Register.css'
 import { useAuth } from "../../AuthContext"
 import {writeUserData} from '../../firebase'
 import { useHistory } from "react-router-dom"
+import HamburgerImg3 from '../BackgroundImages/HamburgerImg3.jpg'
 export default function Register() {
     const { signup,currentUser } = useAuth()
     const history = useHistory()
@@ -48,7 +49,7 @@ export default function Register() {
       }
 
     return (
-        <div className='card container-input text-center'>
+        <div className='card2 container-input text-center' style={{backgroundImage: `url(${HamburgerImg3})`}}>
             <div className='card-body text-center'>
                 <form onSubmit={handleSubmit}>
                <input  className='form-control' ref={firstNameRef} type="text" placeholder='Type your first name'/><br />

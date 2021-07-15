@@ -1,10 +1,9 @@
 
 .eranClass{
-  color:black;
+  color:rgb(156, 11, 11);
   font-weight: bolder;
   font-size: 40px;
   text-shadow:2px 2px gray;
-  
 }
 
 #bolderHeader{
@@ -23,4 +22,8 @@
 
   .card{
     justify-content: space-between;
+     background-Size: 1300px 400px;
+     background-Position: center ;
+     background-repeat: no-repeat;
   }
+

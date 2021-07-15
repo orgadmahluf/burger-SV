@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom"
 import Product from "../Product/Product"
 import Payment from '../Payment/Payment'
 import './CurrentUser.css'
+import HamburgerImg4 from '../BackgroundImages/HamburgerImg4.jpg'
+
 
 export default function CurrentUser() {
     const { currentUser, logout } = useAuth()
@@ -57,7 +59,7 @@ export default function CurrentUser() {
     }
 
     return (
-        <div className='text-center'>
+        <div className='card3 text-center' style={{backgroundImage: `url(${HamburgerImg4})`}}>
 
             
           <strong>Email:</strong> {currentUser.email}
